@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <!-- <link rel="stylesheet" href="/css/index.css"> --> <!-- Correct path to CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    
+    
+    
+    <!-- script when the user clicks back button from profile page will redirect to profile page itself -->
+    <!-- <script>    
+    window.onload = function(){
+    	const isAuthenticated = sessionStorage.getItem('isAuthenticated')
+    	if(!isAuthenticated || isAuthenticated!=='true'){
+    		window.location.href="/login";
+    	}
+    }    
+    </script>  -->
+    
+    
+    <script>
+    window.onload = function() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    };
+ 
+    window.addEventListener("pageshow", function(event) {
+        if (event.persisted || window.performance && window.performance.navigation.type === 2) {
+            window.location.href = "/login";
+        }
+    });
+</script>
+    
+    
+    
+    
+    
+    
+    <style>
+    
+    
+    body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.profile-container, .card-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin-bottom: 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-danger {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+    
+    </style>
+    
+    
+    
+    
+</head>
+
+<body>
+
+    <!-- navELement  -->
+    <nav class="navbar navbar-inverse" id="nav-bar-login-signup" style="background: #312929;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="admindashboard">Event Management</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="admindashboard">Home</a></li>
+                <li><a href="/adminevents">Events</a></li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin/profile"><span th:text="${session.adminName}"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+ 
+ <!-- adding before  -->
+  <div class="container py-5">         
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3" th:text="${session.adminName}"></h5>
+                  <p class="text-muted mb-1">Admin For event management</p>
+                  <p class="text-muted mb-4">Manages event Details</p>
+                  <div class="d-flex justify-content-center mb-2">
+                    
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" th:text="${session.adminName}"></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" th:text="${session.adminEmail}"></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" th:text="${session.adminPhoneNumber}"></p>
+                    </div>
+                  </div>
+                  <hr>
+                 <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Role</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0" th:text="${session.adminRole}"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+          </div>
+        </div> 
+        </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- 
+ 
+ <div class="container  mt-5">
+        <h1 class="text-center mb-4">Admin Profile</h1>
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title">Admin Details</h2>
+                 <p><strong>Name:</strong> <span th:text="${session.adminName}">User Name</span></p>
+                <p><strong>Email:</strong> <span th:text="${session.adminEmail}">Email</span></p>
+                <p><strong>Mobile Number:</strong> <span th:text="${session.adminPhoneNumber}">Mobile Number</span></p>
+               <p><strong>Role:</strong> <span th:text="${admindetails.role}">Role</span></p>
+            </div>
+        </div>
+    </div>
+  -->
+ 
+    <!-- Logout Form -->
+    <div class="container text-center mt-4">
+    <form action="/logout" method="get" style="display: inline;">
+        <!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />  -->
+        <button type="submit" class="btn btn-danger" id="logout-button">Logout</button>
+    </form>
+    </div>
+
+   
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("logout-button").addEventListener('click', function() {
+            sessionStorage.removeItem("isAuthenticated");  
+            /* localStorage.removeItem('local') */
+        });
+    });
+</script>
+    
+    
+    
+    
+    
+    <!-- script for removing session after logout button is clicked -->
+   <!-- <script>
+    $(function(){
+    	$("#logout-button").on('click',function(){
+    		sessionStorage.removeItem('isAuthenticated')
+    	})
+    })
+    
+    </script> 
+     -->
+    
+    
+</body>
+</html>

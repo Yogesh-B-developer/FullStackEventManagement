@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Website</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- navELement  -->
+    <nav class="navbar navbar-inverse" id="nav-bar-login-signup" style="background: #312929;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Event Management</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/basicevents">Events</a></li>
+        
+          </ul>
+          <ul class="nav navbar-nav navbar-right">           
+            <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- This is for specifying event with cards -->
+    <h1 style="text-align: center;" id="card-heading">Events We Organize</h1>
+    <div class="cards-outer-div">
+        <div class="card-container" id="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="color: white;" class="text-center">Music Concert</h3>
+                </div>
+                <div class="card-body">
+                    <img style="padding: 5px;" class="img-1" id="music-concert-image" src="images/musicConcertImages/img_1.jfif">
+                    <p class="card-description">Rock the Block is a vibrant outdoor music festival celebrating diverse musical genres, showcasing local talent, and fostering a strong sense of community.</p>
+                </div>
+                <div class="card-footer">
+                    <h4 style="color: white;"></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container" id="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="color: white;" class="text-center">Foodie Fiesta</h3>
+                </div>
+                <div class="card-body">
+                    <img style="padding: 5px;" class="img-1" id="food-img" src="images/food-fiestaImages/img-1.jfif">
+                    <p class="card-description">Food Fiesta is a one-day outdoor food festival that brings together a diverse range of culinary delights from local and international cuisines.</p>
+                </div>
+                <div class="card-footer">
+                    <h4 style="color: white;"></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container" id="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="color: white;" class="text-center">Adventure Quest</h3>
+                </div>
+                <div class="card-body">
+                    <img style="padding: 5px;" id="adventure-image" class="img-1" src="images/adventure-quest-images/img-1.jfif">
+                    <p class="card-description">A multi-stage outdoor race testing physical and mental endurance.
+                        Teams navigate obstacles, solve puzzles, and complete physical and mental challenges.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <h4 style="color: white;"></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container" id="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="color: white;" class="text-center">Art and Soul</h3>
+                </div>
+                <div class="card-body">
+                    <img style="padding: 5px;" class="img-1" id="art-soul" src="images/art-and-soulImages/img-1.jfif">
+                    <p class="card-description">Art & Soul is a multi-faceted event that brings together the local art community and supports a designated charity through a variety of artistic expressions.</p>
+                </div>
+                <div class="card-footer">
+                    <h4 style="color: white;"></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container" id="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="color: white;" class="text-center">Tech Fest</h3>
+                </div>
+                <div class="card-body">
+                    <img style="padding: 5px;" id="tech-fest-img" class="img-1" src="images/techfest-images/img-1.jfif">
+                    <p class="card-description">TechFest is a two-day conference for industry professionals, academics, and enthusiasts. It offers diverse tracks across tech domains, letting attendees tailor their experience to their interests.</p>
+                </div>
+                <div class="card-footer">
+                    <h4 style="color: white;"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="/adminPage/adminevent.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" id="nav-bar-login-signup" style="background: #312929;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="admindashboard">Event Management</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/admin/admindashboard">Home</a></li>
+                <li class="active"><a href="/adminevents">Events</a></li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin/profile"><span th:text="${session.adminName}"></span></a></li>
+                <li><a href="/addevents"><span >add more events</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="card-container">
+        <div class="card-div">
+            <div class="card" th:each="event : ${allUserEventsInDatabase}">
+                <h1 class="card-title" th:text="${event.eventName}">Event Name</h1>
+                <img th:src="${event.imageUrl}" alt="Event Image" />
+                <p>Date: <span th:text="${event.date}">Date</span></p>
+
+                <p>Location: <span th:text="${event.city}">Location</span></p>
+                
+                 <h1 style="color:white; font-size:1.5rem;">Ticket Price:<span th:text="${event.price}"></span></h1>
+                
+                
+                
+                <form th:action="@{'/update/'+${event.eventId}}" method="post" style="position:relative;">
+                    <button class="update-button" id="${event.eventId}">Update Event</button>
+                </form>
+                <form th:action="@{'/delete/'+${event.eventId}}" method="post" style="position:relative;  top:10px;">
+                    <button class="delete-button" id="${event.eventId}">Delete Event</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

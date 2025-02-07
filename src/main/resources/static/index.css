@@ -1,0 +1,51 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-image: url('images/images/event-background1.jpg');
+    background-size: cover;
+    
+}
+.card-container{
+    background:rgba(82, 82, 134, 0.4);
+    width: 230px;
+    
+    position: relative;
+    left: 15px;
+    top: 130px;
+}
+.img-1{
+    width: 80%;
+    position: relative;
+    left: 22px;
+    top: -3px;
+    height: 100px;
+    transition: opacity 0.5s ease-in-out;
+}
+.cards-outer-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-description{
+   color: whitesmoke;
+   padding: 0 2px 0 2px ;
+}
+#user-name-display{
+    position: relative;
+    color: aliceblue;
+    font-size: 20px;
+    right: 20px;
+    bottom: 4px;
+}
+#user-name-display:hover{
+    cursor: pointer;
+}
+#card-heading{
+    color: antiquewhite;
+}
+#nav-bar-login-signup{
+    color: green;
+}
+

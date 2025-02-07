@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    /* background-image: url('/images/event-background1.jpg'); Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: auto;
+    color: #fff;
+}
+
+/* Card container */
+.card-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Individual card styling */
+.card {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+} 
+
+/* Card title styling */
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffdd57;
+    margin-bottom: 10px;
+}
+
+/* Image styling */
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Text styling */
+.card p {
+    margin: 5px 0;
+    color: #e0e0e0;
+}
+
+/* Button styling */
+.update-button, .delete-button, .register-button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.update-button:hover, .delete-button:hover, .register-button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.1);
+}
+
+/* Modal fade transition fix */
+.modal.fade {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+/* for bigCard */
+.full-description-card {
+    width: 97%;
+    height: auto;
+    background-color: rgb(250, 207, 150);
+    color: black;
+    margin-left: 20px;
+}
+li {
+    list-style: none;
+}
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    position: relative;
+    left: 550px;
+    bottom: 10px;
+}
+
+.close-button {
+    position: relative;
+    font-size: 27px;
+    top: -10px;
+    left: 1195px;
+    color: rgb(235, 16, 16);
+}
+
+.number-of-tickets-div, .cost-display-div, .booking-result {
+    background-color: rgba(202, 240, 240, 0.6);
+    width: 500px;
+}
+
+.number-of-tickets-div {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #333;
+}
+
+.get-cost-button {
+    width: 100%;
+}
+
+#search-for-events {
+    color: black;
+}
+
+.cost-display-div {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+.book-button {
+    width: 100%;
+}
+
+.booking-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 330px;
+    color: #333;
+}
